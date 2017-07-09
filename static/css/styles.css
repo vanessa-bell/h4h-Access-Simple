@@ -1,17 +1,21 @@
 body {
     position: relative;
     margin: 0;
-    width: 100%;
+    min-width: 110%;
 }
 
 section {
     min-height: 100vh;
 }
 
+#good-news {
+  background-color: #fff999 !important;
+}
+
  #map {
-        height: 400px;
-        width: 100%;
-       }
+  height: 400px;
+  width: 100%;
+}
 
 .btn-teal {
     width: 200px;
@@ -32,7 +36,7 @@ section {
 }
 
 .home {
-  background-color: white;
+  background-image: url('http://www.paredownhome.com/wp-content/uploads/2016/07/post-background-placeholder.jpg');
   color: black;
   height: 100vh;
   display: flex;
@@ -47,6 +51,15 @@ section {
 .hero__description {
     font-size: 3em;
     font-family: 'Raleway', sans-serif;
+}
+
+.good-headline {
+  font-family: 'Oswald', sans-serif;
+}
+
+.good__description {
+  font-size: 3em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .flex-grid {
