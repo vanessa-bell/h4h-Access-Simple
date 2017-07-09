@@ -2,3 +2,4 @@
 .DS_Store
 env
 venv
+google_api_key.py

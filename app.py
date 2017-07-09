@@ -8,6 +8,10 @@ import logging
 from logging import Formatter, FileHandler
 from forms import *
 import os
+from googleplaces import GooglePlaces, types
+from google_api_key import API_KEY
+import sqlite3
+
 
 #----------------------------------------------------------------------------#
 # App Config.
@@ -15,13 +19,27 @@ import os
 
 app = Flask(__name__)
 app.config.from_object('config')
-#db = SQLAlchemy(app)
+# db = SQLAlchemy(app)
+
+conn = sqlite3.connect('database.db')
+
+print "Opened database successfully";
+
+conn.execute('''CREATE TABLE IF NOT EXISTS PHARMACIES
+         (PLACE_ID TEXT PRIMARY KEY     NOT NULL,
+         NAME           TEXT    NOT NULL,
+         ADDRESS           TEXT    NOT NULL,
+         PHONE_NUMBER        TEXT NOT NULL,
+         WEBSITE             TEXT NOT NULL,
+         PRESCRIBES         TEXT);''')
+print "Table created successfully";
+
+conn.close()
 
 # Automatically tear down SQLAlchemy.
 '''
 @app.teardown_request
-def shutdown_session(exception=None):
-    db_session.remove()
+def shutdown_session(exception=None):3
 '''
 
 # Login required decorator.
@@ -39,7 +57,37 @@ def login_required(test):
 #----------------------------------------------------------------------------#
 # Controllers.
 #----------------------------------------------------------------------------#
+key = API_KEY
+google_places = GooglePlaces(key)
+query_result = google_places.nearby_search(
+        location='San Francisco, CA',
+        radius=50000, keyword='pharmacy')
 
+# pdb.set_trace()
+
+
+if query_result.has_attributions:
+    print query_result.html_attributions
+
+for place in query_result.places:
+  # print place.name
+
+  # The following method has to make a further API call.
+  place.get_details()
+  # Referencing any of the attributes below, prior to making a call to
+  # get_details() will raise a googleplaces.GooglePlacesAttributeError.
+  # pp = pprint.PrettyPrinter(indent=4)
+  # pp.pprint(place.details) # A dict matching the JSON response from Google.
+
+  print place.place_id
+  print place.name
+  print place.formatted_address
+  print place.local_phone_number
+  place_id = place.place_id
+  name = place.name
+  address =  place.formatted_address
+  phone_number = place.local_phone_number
+  website = place.website
 
 @app.route('/')
 def home():
