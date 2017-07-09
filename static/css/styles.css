@@ -1,0 +1,54 @@
+body {
+    position: relative;
+    margin: 0;
+    width: 100%;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.btn-teal {
+    width: 200px;
+    height: 60px;
+    background-color: #00a796 !important;
+    color: white !important;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 26px !important;
+    margin-right: 50px;
+    margin-top: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px !important;
+}
+
+.btn-teal:last-child{
+    margin-left: 50px;
+}
+
+.home {
+  background-color: white;
+  color: black;
+  height: 100vh;
+  display: flex;
+  min-width: 100%;
+}
+
+.img {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.hero__description {
+    font-size: 3em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.flex-grid {
+  flex-direction: row;
+  margin: 0 0 20px 0;
+}
+.flex-grid .col {
+  flex: 1;
+  padding: 20px;
+}
