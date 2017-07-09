@@ -1,0 +1,8 @@
+
+{% block content %}
+  <form method="post" class="form form-reset">
+    <h3 class="form-heading">Enter your zipcode </h3>
+    {{ form.zipcode(class_ = 'form-control first-input last-input', placeholder = form.zipcode.label.text) }}
+    <input type="submit" value="Search" class="btn btn-lg btn-primary btn-block" disabled>
+  </form>
+{% endblock %}
