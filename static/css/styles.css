@@ -1,7 +1,12 @@
+:root {
+  --dark-yellow-bg-color: #fff999;
+  --dark-green-color: #00a796;
+}
+
 body {
     position: relative;
     margin: 0;
-    min-width: 110%;
+    min-width: 100%;
 }
 
 section {
@@ -9,7 +14,8 @@ section {
 }
 
 #good-news {
-  background-color: #fff999 !important;
+  background: url('../img/ltyellowbackground-01.png') bottom center no-repeat;
+  background-size: 100%;
 }
 
  #map {
@@ -20,7 +26,7 @@ section {
 .btn-teal {
     width: 200px;
     height: 60px;
-    background-color: #00a796 !important;
+    background-color: var(--dark-green-color) !important;
     color: white !important;
     -webkit-border-radius: 16px;
     -moz-border-radius: 16px;
@@ -36,8 +42,8 @@ section {
 }
 
 .home {
-  background-image: url('http://www.paredownhome.com/wp-content/uploads/2016/07/post-background-placeholder.jpg');
-  color: black;
+  background-image: url('../img/backgroundimagedark.jpg');
+  color: white;
   height: 100vh;
   display: flex;
   min-width: 100%;
@@ -53,8 +59,17 @@ section {
     font-family: 'Raleway', sans-serif;
 }
 
+.body__description {
+  font-size: 2em;
+  font-family: 'Raleway', sans-serif;
+}
+
 .good-headline {
   font-family: 'Oswald', sans-serif;
+  color: var(--dark-green-color);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  font-size: 5em;
 }
 
 .good__description {

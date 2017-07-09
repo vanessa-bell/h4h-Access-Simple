@@ -31,3 +31,8 @@ class ForgotForm(Form):
     email = TextField(
         'Email', validators=[DataRequired(), Length(min=6, max=40)]
     )
+
+class ZipCodeForm(Form):
+    zipcode = TextField(
+        'ZipCode', validators=[DataRequired(), Length(min=5, max=5)]
+    )

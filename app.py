@@ -121,9 +121,11 @@ def home():
 def about():
     return render_template('pages/placeholder.about.html')
 
-
-@app.route('/find-a-pharmacy')
+@app.route('/find-a-pharmacy', methods=['GET', 'POST'])
 def findPharmacy():
+    zipcode = request.form['zipcode']
+    print zipcode
+      # need to run google places function
     return render_template('pages/find-a-pharmacy.html')
 
 
