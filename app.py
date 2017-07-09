@@ -51,10 +51,9 @@ def about():
     return render_template('pages/placeholder.about.html')
 
 
-@app.route('/login')
-def login():
-    form = LoginForm(request.form)
-    return render_template('forms/login.html', form=form)
+@app.route('/find-a-pharmacy')
+def findPharmacy():
+    return render_template('pages/find-a-pharmacy.html')
 
 
 @app.route('/register')
