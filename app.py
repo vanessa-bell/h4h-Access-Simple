@@ -34,7 +34,6 @@ conn.execute('''CREATE TABLE IF NOT EXISTS PHARMACIES
          PRESCRIBES         TEXT);''')
 print "Table created successfully";
 
-conn.close()
 
 # Automatically tear down SQLAlchemy.
 '''
@@ -61,7 +60,7 @@ key = API_KEY
 google_places = GooglePlaces(key)
 query_result = google_places.nearby_search(
         location='San Francisco, CA',
-        radius=50000, keyword='pharmacy')
+        radius=50000, types=[types.TYPE_PHARMACY])
 
 # pdb.set_trace()
 
@@ -79,15 +78,39 @@ for place in query_result.places:
   # pp = pprint.PrettyPrinter(indent=4)
   # pp.pprint(place.details) # A dict matching the JSON response from Google.
 
-  print place.place_id
-  print place.name
-  print place.formatted_address
-  print place.local_phone_number
+  # print place.place_id
+  # print place.name
+  # print place.formatted_address
+  # print place.local_phone_number
   place_id = place.place_id
   name = place.name
   address =  place.formatted_address
   phone_number = place.local_phone_number
   website = place.website
+
+
+  add_pharmacy = """INSERT OR IGNORE INTO PHARMACIES (PLACE_ID, NAME, ADDRESS, PHONE_NUMBER, WEBSITE, PRESCRIBES)
+    VALUES (?, ?, ?, ?, ?, ?);"""
+  pharmacy_data = (place_id, name, address, phone_number, website, 'NO')
+
+  conn.execute(add_pharmacy,pharmacy_data)
+
+pharmacy_IDs_query = """
+SELECT
+    PLACE_ID
+FROM
+    PHARMACIES"""
+
+
+c = conn.cursor()
+c.execute(pharmacy_IDs_query)
+IDS = c.fetchall()
+print(IDS)
+
+
+conn.commit()
+print "Records created successfully"
+conn.close()
 
 @app.route('/')
 def home():
