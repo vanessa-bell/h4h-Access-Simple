@@ -19,6 +19,7 @@ paramiko==2.2.1
 pyasn1==0.2.3
 pycparser==2.18
 PyNaCl==1.1.2
+python-google-places==1.4.0
 six==1.10.0
 SQLAlchemy==1.1.11
 Werkzeug==0.12.2
