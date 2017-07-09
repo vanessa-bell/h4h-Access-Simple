@@ -18,6 +18,54 @@ section {
   background-size: 100%;
 }
 
+#bad-news {
+  background: url('../img/yellow2background-01.png') bottom center no-repeat;
+  background-size: 100%;
+}
+
+#where-we-come-in {
+  background-color: #a1c1b2;
+}
+
+// #find-help {
+//   min-height: 100%;
+// }
+
+// #give-help {
+//   background-color: var(--dark-green-color);
+//   color: white;
+//   min-height: 100%;
+// }
+
+#give-help h1 {
+  color: white;
+}
+
+#help {
+  background-image: url('../img/help_us.png');
+  background-size: 1250px;
+}
+
+#enter-zipcode {
+  background-image: url('../img/SLIDE1-01.png');
+  min-height: 100vh;
+  background-size: 1250px;
+}
+
+.last-btn {
+  margin-top: 700px !important;
+  background-color: white !important;
+  color: #00a796 !important;
+
+}
+
+.last-btn:last-child {
+  margin-left: 300px !important;
+  background-color: white !important;
+  color: #00a796 !important;
+  margin-bottom: 10px;
+}
+
  #map {
   height: 400px;
   width: 100%;
@@ -35,6 +83,12 @@ section {
     margin-top: 50px;
     font-family: 'Oswald', sans-serif;
     font-size: 30px !important;
+}
+
+#help-button {
+  background-color: white !important;
+  color: var(--dark-green-color) !important;
+  margin-bottom: 1em;
 }
 
 .btn-teal:last-child{
@@ -67,7 +121,7 @@ section {
 .good-headline {
   font-family: 'Oswald', sans-serif;
   color: var(--dark-green-color);
-  margin-top: 1em;
+  margin-top: 2em;
   margin-bottom: 1em;
   font-size: 5em;
 }

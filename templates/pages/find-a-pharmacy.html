@@ -2,7 +2,15 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Find a Pharmacy{% endblock %}
 {% block content %}
-<div id="root">
+<section id="enter-zipcode">
+  <button id="hidden-button"><a href="/"></a></button>
+</section>
+<!-- <div id="root">
+    <div>
+      <a href="/">
+        <img height='100' src='../static/img/withinreachlogo.png' class="img" alt="within reach logo" />
+      </a>
+    </div>
     <form action="/search-pharmacies" method="POST" class="form form-reset">
       <h3 class="form-heading">Enter your zipcode </h3>
       <input type="text" name="zipcode" placeholder="Your Zip Code">
@@ -10,20 +18,16 @@
     </form>
     <section class="map">
         <div class="container">
-            <div>
-                <a href="/">
-                  <img height='100' src='../static/img/withinreachlogo.png' class="img" alt="within reach logo" />
-                </a>
-            </div>
+
 
             <div id="map">
             </div>
             </div>
         </div>
     </section>
-</div>
+</div> -->
 
-    <script>
+    <!-- <script>
       function initMap() {
         var sanfran = {lat: 37.775, lng: -122.419};
         var map = new google.maps.Map(document.getElementById('map'), {
@@ -38,6 +42,6 @@
     </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo&callback=initMap">
-    </script>
+    </script> -->
 
 {% endblock %}
