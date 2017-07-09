@@ -126,11 +126,9 @@ def google_search(location):
     SET
       PRESCRIBES = 'YES'
     WHERE
-<<<<<<< HEAD
+
       PLACE_ID = 'ChIJUfiUFleHhYARA0hMzaudAmM'"""
-=======
-      PRESCRIBES IS NULL"""
->>>>>>> 86f003326f4782025c9ee56f91deb33811fb3ad0
+
 
     c.execute(update_query)
 
@@ -151,16 +149,12 @@ def google_search(location):
       places_dict[place] = prescribe_bool
       places_dicts[place]['prescribes'] = prescribe_bool
 
-<<<<<<< HEAD
-=======
 
-
->>>>>>> 86f003326f4782025c9ee56f91deb33811fb3ad0
   # Filter out just the three closest results
 
   # test
     for p in places_dicts.keys():
-<<<<<<< HEAD
+
         if places_dicts[p]['prescribes'] == 'YES':
             print(p)
             print(places_dicts[p])
@@ -168,15 +162,7 @@ def google_search(location):
     return places_dicts
 
 location = '350 Parnassus Ave, San Francisco'
-=======
-        # if places_dicts[p]['prescribes'] == 'YES':
-        print(p)
-        print(places_dicts[p])
-    # print(places_dicts)
-    return places_dicts
 
-location = 'San Francisco'
->>>>>>> 86f003326f4782025c9ee56f91deb33811fb3ad0
 
 google_search(location)
 
