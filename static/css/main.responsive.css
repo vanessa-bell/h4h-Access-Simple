@@ -18,17 +18,22 @@
         flex-direction: column !important;
     }
 
-    .btn-first {
-        margin-left: 0 !important;
+    .btn-first:last-child {
+        margin-left: 2em !important;
+        margin-top: 1em !important;
+    }
+    .btn-first:first-child {
+        margin-left: -0.5em !important;
+    }
+
+    .btn-bottom {
+        margin-top: 1em !important;
+        margin-bottom: 2em;
     }
 
     .hero__description,
     .body__description {
         font-size: 2em !important;
-    }
-
-    .btn-teal:last-child {
-        margin-left: 2.5em !important;
     }
 
     #give-help,
