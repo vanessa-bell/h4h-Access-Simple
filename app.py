@@ -23,7 +23,7 @@ app.config.from_object('config')
 
 conn = sqlite3.connect('database.db')
 
-print "Opened database successfully";
+print("Opened database successfully")
 
 conn.execute('''CREATE TABLE IF NOT EXISTS PHARMACIES
          (PLACE_ID TEXT PRIMARY KEY     NOT NULL,
@@ -32,7 +32,7 @@ conn.execute('''CREATE TABLE IF NOT EXISTS PHARMACIES
          PHONE_NUMBER        TEXT NOT NULL,
          WEBSITE             TEXT NOT NULL,
          PRESCRIBES         TEXT);''')
-print "Table created successfully";
+print("Table created successfully")
 
 
 # Automatically tear down SQLAlchemy.
