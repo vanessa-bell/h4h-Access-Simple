@@ -19,7 +19,6 @@ import sqlite3
 
 app = Flask(__name__)
 app.config.from_object('config')
-# db = SQLAlchemy(app)
 
 conn = sqlite3.connect('database.db')
 
@@ -29,56 +28,46 @@ conn.execute('''CREATE TABLE IF NOT EXISTS PHARMACIES
          (PLACE_ID TEXT PRIMARY KEY     NOT NULL,
          NAME           TEXT    NOT NULL,
          ADDRESS           TEXT    NOT NULL,
+         LAT               NUMERIC NOT NULL,
+         LONG              NUMERIC NOT NULL,
          PHONE_NUMBER        TEXT NOT NULL,
          WEBSITE             TEXT NOT NULL,
          PRESCRIBES         TEXT);''')
 print "Table created successfully";
 
+conn.close()
 
 # Automatically tear down SQLAlchemy.
 '''
 @app.teardown_request
 def shutdown_session(exception=None):3
 '''
-
-# Login required decorator.
-'''
-def login_required(test):
-    @wraps(test)
-    def wrap(*args, **kwargs):
-        if 'logged_in' in session:
-            return test(*args, **kwargs)
-        else:
-            flash('You need to login first.')
-            return redirect(url_for('login'))
-    return wrap
-'''
 #----------------------------------------------------------------------------#
 # Controllers.
 #----------------------------------------------------------------------------#
-# def google_search(location):
-#     key = API_KEY
-#     google_places = GooglePlaces(key)
-#     query_result = google_places.nearby_search(
-#             location=location,
-#             radius=50000, types=[types.TYPE_PHARMACY])
+def google_search(location):
+    key = API_KEY
+    google_places = GooglePlaces(key)
+    query_result = google_places.nearby_search(
+            location=location,
+            radius=50000, types=[types.TYPE_PHARMACY])
 
-#     # pdb.set_trace()
+    # pdb.set_trace()
 
 
-#     if query_result.has_attributions:
-#         print query_result.html_attributions
+    if query_result.has_attributions:
+        print query_result.html_attributions
 
-#     places_list = []
-#     places_dicts = {}
-#     display_dict = {}
+    places_list = []
+    places_dicts = {}
+    display_dict = {}
 
-#     count = 0
+    count = 0
 
-#     for place in query_result.places:
-#       count += 1
+    for place in query_result.places:
+      count += 1
 
-#       place_dict = {}
+      place_dict = {}
 #       # print place.name
 
 #       # The following method has to make a further API call.
@@ -175,6 +164,10 @@ def login_required(test):
 # conn.commit()
 # print "Records created successfully"
 # conn.close()
+
+#----------------------------------------------------------------------------#
+# Routes.
+#----------------------------------------------------------------------------#
 
 @app.route('/')
 def home():

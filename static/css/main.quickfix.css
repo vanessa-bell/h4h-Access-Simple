@@ -6,4 +6,153 @@
  * Contains immediate fixes that should be revised later and added in the
  * main.css.
  */
+:root {
+  --dark-yellow-bg-color: #fff999;
+  --dark-green-color: #00a796;
+}
 
+// adjust margins
+.container-fluid {
+     padding-right: 0 !important; /*15px in bootstrap.css*/
+     padding-left: 0 !important;  /*idem*/
+     margin-right: auto;
+     margin-left: auto;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-width: 100%;
+}
+
+section {
+    min-height: 100vh;
+}
+
+#good-news {
+  background: url('../img/ltyellowbackground-01.png') bottom center no-repeat;
+  height: 100vh;
+}
+
+#bad-news {
+  background: url('../img/yellow2background-01.png') bottom center no-repeat;
+  height: 100vh;
+}
+
+#where-we-come-in {
+    background-color: #a1c1b2;
+    height: 100vh;
+}
+
+#give-help,
+#find-help {
+  color: var(--dark-green-color);
+  min-height: 100vh;
+  border: 0.5px dotted #a1c1b2;
+}
+
+#give-help:hover,
+#find-help:hover {
+    background-color: var(--dark-green-color);
+    color: white;
+}
+
+#give-help:hover h1,
+#find-help:hover h1 {
+  color: white;
+}
+
+#give-help:hover button,
+#find-help:hover button {
+    color: var(--dark-green-color) !important;
+    background-color: white !important;
+}
+
+
+#enter-zipcode {
+  background-image: url('../img/SLIDE1-01.png');
+  min-height: 100vh;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+
+#zipcodelink {
+  height: 200px;
+  width: 500px;
+  top: 1px;
+  position: absolute;
+  margin-left: 800px;
+}
+
+#results-page {
+  background-image: url('../img/results.png');
+  min-height: 100vh;
+  background-size: 100vw;
+  background-repeat: no-repeat;
+}
+
+#withinreachlink {
+  height: 200px;
+  width: 200px;
+}
+
+ #map {
+  height: 400px;
+  width: 100%;
+}
+
+.btn-teal {
+    width: 7em;
+    height: 2em;
+    background-color: var(--dark-green-color) !important;
+    color: white !important;
+    -webkit-border-radius: 16px;
+    -moz-border-radius: 16px;
+    border-radius: 26px !important;
+    margin-top: 2em;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px !important;
+}
+
+
+.btn-teal:hover {
+    color: var(--dark-green-color) !important;
+    background-color: white !important;
+}
+
+.hero__cta {
+    display: flex;
+    flex-direction: row;
+}
+
+
+.home {
+  background-image: url('../img/backgroundimagedark.jpg');
+  background-repeat: repeat-x;
+  color: white;
+  height: 100vh;
+}
+
+#logo {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.hero__description,
+.good__description {
+    font-size: 3em;
+    font-family: 'Raleway', sans-serif;
+}
+
+.body__description {
+  font-size: 2em;
+  font-family: 'Raleway', sans-serif;
+}
+
+.good-headline {
+  font-family: 'Oswald', sans-serif;
+  color: var(--dark-green-color);
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 5em;
+}
