@@ -1,1 +1,900 @@
 
+2017-07-11 16:10:26,182 INFO: errors [in /Users/vanessabell/Desktop/flask-boilerplate/app.py:141]
+2017-07-11 16:10:42,526 INFO: errors [in /Users/vanessabell/Desktop/flask-boilerplate/app.py:141]
+2017-07-11 16:11:06,351 INFO: errors [in app.py:140]
+2017-07-11 16:11:30,191 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 96, in findPharmacy
+    db.session.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such table: pharmacy [SQL: u'INSERT INTO pharmacy (place_id, name, address, lat, lon, phone_number, website, prescribes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'] [parameters: (u'14', u'test', u'test address', u'32', u'142', u'8052458505', u'www.com', u'YES')]
+2017-07-11 16:13:29,940 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 96, in findPharmacy
+    db.session.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such table: pharmacy [SQL: u'INSERT INTO pharmacy (place_id, name, address, lat, lon, phone_number, website, prescribes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'] [parameters: (u'23', u'test', u'test ', u'32', u'15', u'20358', u'www.com', u'yes')]
+2017-07-11 16:13:53,979 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 96, in findPharmacy
+    db.session.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such table: pharmacy [SQL: u'INSERT INTO pharmacy (place_id, name, address, lat, lon, phone_number, website, prescribes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'] [parameters: (u'23', u'test', u'test ', u'32', u'15', u'20358', u'www.com', u'yes')]
+2017-07-11 16:14:50,163 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 96, in findPharmacy
+    db.session.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such table: pharmacy [SQL: u'INSERT INTO pharmacy (place_id, name, address, lat, lon, phone_number, website, prescribes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'] [parameters: (u'23', u'test', u'test ', u'32', u'15', u'20358', u'www.com', u'yes')]
+2017-07-11 16:15:02,850 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 96, in findPharmacy
+    db.session.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/scoping.py", line 157, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 906, in commit
+    self.transaction.commit()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2171, in flush
+    self._flush(objects)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2291, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/session.py", line 2255, in _flush
+    flush_context.execute()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1189, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/base.py", line 1182, in _execute_context
+    context)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/sqlalchemy/engine/default.py", line 470, in do_execute
+    cursor.execute(statement, parameters)
+OperationalError: (sqlite3.OperationalError) no such table: pharmacy [SQL: u'INSERT INTO pharmacy (place_id, name, address, lat, lon, phone_number, website, prescribes) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'] [parameters: (u'23', u'test', u'test address', u'23', u'345', u'aoweif', u'awoifj', u'oeao')]
+2017-07-11 16:16:46,385 INFO: errors [in app.py:140]
+2017-07-11 16:16:58,520 INFO: errors [in app.py:140]
+2017-07-11 16:17:10,255 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 98, in findPharmacy
+    return redirect('/find-a-pharmacy')
+NameError: global name 'redirect' is not defined
+2017-07-11 16:17:31,670 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 98, in findPharmacy
+    return redirect('/find-a-pharmacy')
+NameError: global name 'redirect' is not defined
+2017-07-11 16:18:21,176 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 98, in findPharmacy
+    return redirect('/find-a-pharmacy')
+NameError: global name 'redirect' is not defined
+2017-07-11 16:18:40,384 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 98, in findPharmacy
+    return redirect('/find-a-pharmacy')
+NameError: global name 'redirect' is not defined
+2017-07-11 16:19:37,982 INFO: errors [in app.py:140]
+2017-07-11 16:49:23,029 INFO: errors [in app.py:130]
+2017-07-11 16:51:12,157 INFO: errors [in app.py:132]
+2017-07-11 16:52:26,097 INFO: errors [in app.py:130]
+2017-07-11 16:55:47,841 INFO: errors [in app.py:133]
+2017-07-11 16:55:53,178 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 61, in google_search
+    print place.geometry
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:55:58,109 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 61, in google_search
+    print place.geometry
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:56:02,376 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 61, in google_search
+    print place.geometry
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:56:08,985 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 61, in google_search
+    print place.geometry
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:58:03,117 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    zipcode = request.form['zipcode']
+  File "app.py", line 61, in google_search
+    print place.local_phone_number
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:58:08,787 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 88, in findPharmacy
+    zipcode = request.form['zipcode']
+  File "app.py", line 61, in google_search
+    print place.local_phone_number
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 16:58:12,204 INFO: errors [in app.py:134]
+2017-07-11 16:58:13,924 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 60, in google_search
+    print pprint.place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 16:58:22,031 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 60, in google_search
+    print pprint.place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:01:42,080 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print json.dumps(place.details, indent=2) # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:01:49,296 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print json.dumps(place.details, indent=2) # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:02:10,454 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:02:13,742 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:02:44,047 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:02:51,163 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:03:14,542 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    # print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:03:21,705 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 89, in findPharmacy
+    @app.route('/database-test')
+  File "app.py", line 60, in google_search
+    # print place.details # A dict matching the JSON response from Google.
+AttributeError: 'module' object has no attribute 'place'
+2017-07-11 17:03:24,907 INFO: errors [in app.py:130]
+2017-07-11 17:04:35,679 INFO: errors [in app.py:132]
+2017-07-11 17:04:40,215 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 87, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 54, in google_search
+    print place.geo_location.lat
+AttributeError: 'dict' object has no attribute 'lat'
+2017-07-11 17:08:53,926 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 87, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 54, in google_search
+    print place.geo_location.lat
+AttributeError: 'dict' object has no attribute 'lat'
+2017-07-11 17:09:14,743 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 87, in findPharmacy
+    
+  File "app.py", line 54, in google_search
+    print place.place_id
+AttributeError: 'dict' object has no attribute 'lat'
+2017-07-11 17:09:26,502 INFO: errors [in app.py:130]
+2017-07-11 17:13:43,236 INFO: errors [in app.py:130]
+2017-07-11 17:15:50,541 INFO: errors [in app.py:130]
+2017-07-11 17:15:52,718 ERROR: Exception on /find-a-pharmacy [GET] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 82, in findPharmacy
+    return render_template("pages/find-a-pharmacy.html", API_KEY=API_KEY)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/templates/pages/find-a-pharmacy.html", line 84, in template
+    <script src="https://maps.googleapis.com/maps/api/js?key=`${{{API_KEY}}}`&libraries=places&callback=initMap"
+TemplateSyntaxError: expected token ':', got '}'
+2017-07-11 17:16:09,940 ERROR: Exception on /find-a-pharmacy [GET] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 82, in findPharmacy
+    return render_template("pages/find-a-pharmacy.html", API_KEY=API_KEY)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/templates/pages/find-a-pharmacy.html", line 84, in template
+    <script src="https://maps.googleapis.com/maps/api/js?key=`${{{API_KEY}}}`&libraries=places&callback=initMap"
+TemplateSyntaxError: expected token ':', got '}'
+2017-07-11 17:20:01,429 INFO: errors [in app.py:130]
+2017-07-11 17:20:25,410 ERROR: Exception on /find-a-pharmacy [GET] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 82, in findPharmacy
+    return render_template("pages/find-a-pharmacy.html", API_KEY=API_KEY)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/templating.py", line 133, in render_template
+    return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 869, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 830, in get_template
+    return self._load_template(name, self.make_globals(globals))
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 804, in _load_template
+    template = self.loader.load(self, name, globals)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/loaders.py", line 125, in load
+    code = environment.compile(source, name, filename)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 591, in compile
+    self.handle_exception(exc_info, source_hint=source_hint)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/jinja2/environment.py", line 780, in handle_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/templates/pages/find-a-pharmacy.html", line 84, in template
+    <script src=`https://maps.googleapis.com/maps/api/js?key=${{{API_KEY}}}&libraries=places&callback=initMap`
+TemplateSyntaxError: expected token ':', got '}'
+2017-07-11 17:24:40,341 INFO: errors [in app.py:131]
+2017-07-11 17:25:08,612 INFO: errors [in app.py:131]
+2017-07-11 17:26:40,058 INFO: errors [in app.py:131]
+2017-07-11 17:27:21,833 INFO: errors [in app.py:131]
+2017-07-11 17:41:43,637 INFO: errors [in app.py:132]
+2017-07-11 17:43:58,800 INFO: errors [in app.py:132]
+2017-07-11 17:44:53,002 INFO: errors [in app.py:132]
+2017-07-11 17:45:42,276 INFO: errors [in app.py:132]
+2017-07-11 17:46:32,645 INFO: errors [in app.py:132]
+2017-07-11 17:47:54,382 INFO: errors [in app.py:132]
+2017-07-11 17:48:09,308 INFO: errors [in app.py:132]
+2017-07-11 17:48:26,868 INFO: errors [in app.py:132]
+2017-07-11 17:50:42,157 INFO: errors [in app.py:135]
+2017-07-11 17:50:45,479 ERROR: Exception on /find-a-pharmacy [GET] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 87, in findPharmacy
+    return render_template("pages/find-a-pharmacy.html", placeIds=placeIds)
+NameError: global name 'placeIds' is not defined
+2017-07-11 17:51:31,288 ERROR: Exception on /find-a-pharmacy [GET] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 87, in findPharmacy
+    return render_template("pages/find-a-pharmacy.html")
+NameError: global name 'placeIds' is not defined
+2017-07-11 17:51:34,295 INFO: errors [in app.py:135]
+2017-07-11 17:51:41,813 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 90, in findPharmacy
+    google_search(zipcode)
+  File "app.py", line 57, in google_search
+    print place.geometry.location
+AttributeError: 'Place' object has no attribute 'geometry'
+2017-07-11 17:51:55,984 INFO: errors [in app.py:134]
+2017-07-11 17:52:00,264 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 90, in findPharmacy
+    return redirect('/find-a-pharmacy',placeIds=placeIds)
+NameError: global name 'placeIds' is not defined
+2017-07-11 17:52:37,883 INFO: errors [in app.py:135]
+2017-07-11 17:52:44,653 ERROR: Exception on /find-a-pharmacy [POST] [in /Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py:1560]
+Traceback (most recent call last):
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1982, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1614, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1517, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1612, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/vanessabell/Desktop/flask-boilerplate/env/lib/python2.7/site-packages/flask/app.py", line 1598, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "app.py", line 91, in findPharmacy
+    return redirect('/find-a-pharmacy',placeIds=placeIds)
+TypeError: redirect() got an unexpected keyword argument 'placeIds'
+2017-07-11 17:53:12,202 INFO: errors [in app.py:135]
+2017-07-11 17:55:43,224 INFO: errors [in app.py:135]
+2017-07-11 18:01:08,537 INFO: errors [in app.py:135]
+2017-07-11 18:02:08,456 INFO: errors [in app.py:135]
+2017-07-11 18:05:35,628 INFO: errors [in app.py:135]
+2017-07-11 18:14:47,788 INFO: errors [in app.py:135]
+2017-07-11 18:17:36,853 INFO: errors [in app.py:135]
+2017-07-11 18:22:56,223 INFO: errors [in app.py:135]
+2017-07-11 18:23:31,779 INFO: errors [in app.py:135]
+2017-07-11 18:24:01,577 INFO: errors [in app.py:135]
+2017-07-11 18:24:42,739 INFO: errors [in app.py:135]
+2017-07-11 18:27:56,035 INFO: errors [in app.py:135]
+2017-07-11 18:28:38,414 INFO: errors [in app.py:135]
+2017-07-11 18:28:59,402 INFO: errors [in app.py:135]
+2017-07-11 18:32:33,370 INFO: errors [in app.py:135]
+2017-07-11 18:33:17,409 INFO: errors [in app.py:135]
+2017-07-11 18:35:15,963 INFO: errors [in app.py:135]
+2017-07-11 18:35:53,576 INFO: errors [in app.py:135]
+2017-07-11 18:36:44,905 INFO: errors [in app.py:135]
+2017-07-11 18:40:35,924 INFO: errors [in app.py:135]
+2017-07-11 18:41:35,280 INFO: errors [in app.py:135]
+2017-07-11 18:42:59,473 INFO: errors [in app.py:135]
+2017-07-11 18:46:35,930 INFO: errors [in app.py:135]
+2017-07-11 18:47:48,777 INFO: errors [in app.py:135]
+2017-07-11 18:48:50,591 INFO: errors [in app.py:135]
+2017-07-11 18:49:44,764 INFO: errors [in app.py:135]
+2017-07-11 21:13:53,139 INFO: errors [in app.py:135]
+2017-07-11 21:20:14,235 INFO: errors [in app.py:135]
+2017-07-12 09:57:48,022 INFO: errors [in app.py:135]
+2017-07-12 10:00:20,065 INFO: errors [in app.py:135]
+2017-07-12 10:00:39,559 INFO: errors [in app.py:135]
+2017-07-12 10:03:38,009 INFO: errors [in app.py:135]
+2017-07-12 10:04:27,846 INFO: errors [in app.py:136]
+2017-07-12 10:05:15,002 INFO: errors [in app.py:136]
+2017-07-12 10:06:12,617 INFO: errors [in app.py:135]
+2017-07-12 10:06:53,026 INFO: errors [in app.py:135]
+2017-07-12 10:08:10,756 INFO: errors [in app.py:135]
+2017-07-12 10:09:28,443 INFO: errors [in app.py:135]

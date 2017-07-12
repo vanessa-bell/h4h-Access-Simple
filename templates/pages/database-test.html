@@ -1,0 +1,23 @@
+
+{% extends 'layouts/main.html' %}
+{% block title %}Find a Pharmacy{% endblock %}
+{% block content %}
+<section id="enter-zipcode">
+  <a href="/"><div id="withinreachlink"></div></a>
+  <a href="/results-page"><div class="pull-right" id="zipcodelink"></div></a>
+</section>
+
+    <form action="/find-a-pharmacy" method="POST" class="form form-reset">
+      <input type="text" name="place_id" placeholder="place_id">
+      <input type="text" name="name" placeholder="name">
+      <input type="text" name="address" placeholder="address">
+      <label>Lat</label>
+      <input type="number" name="lat">
+      <label>Lon</label>
+      <input type="number" name="lon">
+      <input type="text" name="phone_number" placeholder="phone_number">
+      <input type="text" name="website" placeholder="website">
+      <input type="text" name="prescribes" placeholder="prescribes">
+      <input type="submit" value="Submit" class="btn btn-primary">
+    </form>
+{% endblock %}

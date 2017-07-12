@@ -19,6 +19,21 @@
      margin-left: auto;
 }
 
+.style-4 input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-bottom: solid 2px #c9c9c9;
+  transition: border 0.3s;
+  font-family: 'Oswald', sans-serif;
+  font-size: 5em;
+}
+.style-4 input[type="text"]:focus,
+.style-4 input[type="text"].focus {
+  border-bottom: solid 2px #969696;
+  outline-width: 0;
+
+}
+
 body {
     position: relative;
     margin: 0;
@@ -30,12 +45,14 @@ section {
 }
 
 #good-news {
-  background: url('../img/ltyellowbackground-01.png') bottom center no-repeat;
-  height: 100vh;
+  background: url('../img/ltyellowbackground-01.png') no-repeat center center;
+  background-size: cover;
+  min-height: 100vh;
 }
 
 #bad-news {
   background: url('../img/yellow2background-01.png') bottom center no-repeat;
+  background-size: cover;
   height: 100vh;
 }
 
@@ -56,6 +73,11 @@ section {
     background-color: var(--dark-green-color);
     color: white;
 }
+
+#give-help:hover,
+#find-help:hover {
+    background-color: var(--dark-green-color);
+    }
 
 #give-help:hover h1,
 #find-help:hover h1 {
@@ -129,6 +151,7 @@ section {
 .home {
   background-image: url('../img/backgroundimagedark.jpg');
   background-repeat: repeat-x;
+  background-size: cover;
   color: white;
   height: 100vh;
 }
@@ -136,6 +159,11 @@ section {
 #logo {
     margin-top: 3em;
     margin-bottom: 3em;
+}
+
+.btn-first:first-child {
+    margin-left: 13em;
+    margin-right: 2em;
 }
 
 .hero__description,

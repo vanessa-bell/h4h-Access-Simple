@@ -2,47 +2,29 @@
 {% extends 'layouts/main.html' %}
 {% block title %}Find a Pharmacy{% endblock %}
 {% block content %}
-<section id="enter-zipcode">
-  <a href="/"><div id="withinreachlink"></div></a>
-  <a href="/results-page"><div class="pull-right" id="zipcodelink"></div></a>
+<section>
+  <div class="col-md-12">
+      <a href="/"><img id="logo" height='100' src='../../static/img/withinreachlogo.png' class="img" alt="within reach logo" /></a>
+  </div>
+  <form method="POST" action="/find-a-pharmacy" class="style-4 pull-right">
+    <input type="text" name="zipcode" placeholder="ZIP CODE">
+    <input type="submit" style="visibility: hidden;">
+  </form>
 </section>
-<!-- <div id="root">
-    <div>
-      <a href="/">
-        <img height='100' src='../static/img/withinreachlogo.png' class="img" alt="within reach logo" />
-      </a>
-    </div>
-    <form action="/search-pharmacies" method="POST" class="form form-reset">
-      <h3 class="form-heading">Enter your zipcode </h3>
-      <input type="text" name="zipcode" placeholder="Your Zip Code">
-      <input type="submit" value="Search" class="btn btn-primary">
-    </form>
-    <section class="map">
-        <div class="container">
 
-
-            <div id="map">
-            </div>
-            </div>
-        </div>
-    </section>
-</div> -->
-
-    <!-- <script>
-      function initMap() {
-        var sanfran = {lat: 37.775, lng: -122.419};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 15,
-          center: sanfran
+<script type="text/javascript">
+$(function() {
+    $('.style-4').each(function() {
+        $(this).find('input').keypress(function(e) {
+            // Enter pressed?
+            if(e.which == 10 || e.which == 13) {
+                this.form.submit();
+            }
         });
-        var marker = new google.maps.Marker({
-          position: sanfran,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAyesbQMyKVVbBgKVi2g6VX7mop2z96jBo&callback=initMap">
-    </script> -->
+
+        $(this).find('input[type=submit]').hide();
+    });
+});
+</script>
 
 {% endblock %}
